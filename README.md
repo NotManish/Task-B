@@ -58,4 +58,4 @@ Include a breakdown of the time spent, e.g.:
 - **Testing and Debugging**: 1 hour 
 - **README and Documentation**: 1 hour  
 
-_Total Time: 11 hours_aproximated
+Total Time: 11 hours aproximated
