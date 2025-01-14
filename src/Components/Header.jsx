@@ -1,11 +1,13 @@
 function Header() {
     return (
-        <div className="flex flex-col items-center justify-center h-[50px]">
-            <p className="text-2xl font-bold text-blue-600">
-                Kanban Board
-            </p>
-            <hr className="border-gray-500 mt-2 w-screen" />
-        </div>
+        <>
+            <div className="flex flex-col justify-center   h-[50px] md:h-[60px] lg:h-[70px] ">
+                <p className="text-2xl font-bold text-black md:text-3xl lg:text-4xl">
+                    Kanban Board
+                </p>
+            </div>
+            <hr className="border-gray-500 w-screen" />
+        </>
     );
 }
 

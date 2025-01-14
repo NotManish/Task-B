@@ -1,21 +1,45 @@
-import AddBoard from "../AddBoard";
-import Board from "./Board";
+
 import { myContext } from "../App";
 import { useContext } from "react";
+import { DragDropContext } from "react-beautiful-dnd";
+import Board from "./Board";
 
 function BoardContainer() {
-  const { boards } = useContext(myContext);
-  console.log(boards);
+  const { boards, setBoard } = useContext(myContext);
+
+  const onDragEnd = (result) => {
+    const { source, destination } = result;
+
+    if (!destination) return;
+
+    // Prevent unnecessary updates if dropped in the same position
+    if (
+      source.droppableId === destination.droppableId &&
+      source.index === destination.index
+    ) {
+      return;
+    }
+
+    const updatedBoards = [...boards];
+    const sourceBoard = updatedBoards.find((board) => board.id === source.droppableId);
+    const destinationBoard = updatedBoards.find(
+      (board) => board.id === destination.droppableId
+    );
+
+    const [movedTask] = sourceBoard.cards.splice(source.index, 1);
+    destinationBoard.cards.splice(destination.index, 0, movedTask);
+
+    setBoard(updatedBoards);
+  };
 
   return (
-    <div className="flex flex-row gap-1 overflow-x-scroll no-scrollbar h-full border-red-400 border-4 mt-10 md:gap-2">
-      {
-        boards.map((item, index) => {
-          return <Board key={item.id} item={item} />;  {/* Add return here */}
-        })
-      }
-      <AddBoard />
-    </div>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <div className="flex flex-row gap-1 overflow-x-scroll no-scrollbar h-full mt-5 md:gap-2">
+        {boards.map((item) => (
+          <Board key={item.id} item={item} />
+        ))}
+      </div>
+    </DragDropContext>
   );
 }
 
