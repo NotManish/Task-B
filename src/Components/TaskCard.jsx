@@ -1,4 +1,3 @@
-
 import { Draggable } from "react-beautiful-dnd";
 
 function TaskCard({ card, index }) {
@@ -20,4 +19,3 @@ function TaskCard({ card, index }) {
 }
 
 export default TaskCard;
-

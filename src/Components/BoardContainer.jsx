@@ -1,4 +1,3 @@
-
 import { myContext } from "../App";
 import { useContext } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
@@ -7,12 +6,11 @@ import Board from "./Board";
 function BoardContainer() {
   const { boards, setBoard } = useContext(myContext);
 
+  // Handle drag and drop
   const onDragEnd = (result) => {
     const { source, destination } = result;
-
     if (!destination) return;
 
-    // Prevent unnecessary updates if dropped in the same position
     if (
       source.droppableId === destination.droppableId &&
       source.index === destination.index
@@ -21,7 +19,9 @@ function BoardContainer() {
     }
 
     const updatedBoards = [...boards];
-    const sourceBoard = updatedBoards.find((board) => board.id === source.droppableId);
+    const sourceBoard = updatedBoards.find(
+      (board) => board.id === source.droppableId
+    );
     const destinationBoard = updatedBoards.find(
       (board) => board.id === destination.droppableId
     );
@@ -34,7 +34,7 @@ function BoardContainer() {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <div className="flex flex-row gap-1 overflow-x-scroll no-scrollbar h-full mt-5 md:gap-2">
+      <div className="flex flex-row gap-1 overflow-x-scroll no-scrollbar h-full p-2 md:gap-2">
         {boards.map((item) => (
           <Board key={item.id} item={item} />
         ))}

@@ -1,4 +1,3 @@
-
 import { Droppable } from "react-beautiful-dnd";
 import TaskCard from "./TaskCard";
 import AddTask from "./AddTask";
@@ -19,13 +18,16 @@ function Board({ item }) {
             </span>
           </div>
           <div className="bg-slate-200 flex flex-col items-center gap-3 p-3 overflow-y-scroll no-scrollbar h-[200px] md:h-[250px] lg:h-[300px]">
-            {item.cards.map((card, index) => (
-              <TaskCard key={card.id} card={card} index={index} />
-            ))}
+            {item.cards.length > 0 && (
+              item.cards.map((card, index) => (
+                <TaskCard key={card.id} card={card} index={index} />
+              ))
+            ) 
+            }
             {provided.placeholder}
           </div>
           <div className="flex justify-center">
-            <AddTask />
+            <AddTask boardId={item.id} />
           </div>
         </div>
       )}
