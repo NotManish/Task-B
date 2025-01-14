@@ -47,10 +47,10 @@ npm run dev
 - Improve accessibility for drag-and-drop functionality.  
 - Add delete task, add board features.
 
-#### 3. **Live Demo Link**  
+####  **Live Demo Link**  
 - https://task-i030k96xu-manishh-shresthas-projects.vercel.app
 
-#### 4. **Time Spent on the Project**  
+####  **Time Spent on the Project**  
 Include a breakdown of the time spent, e.g.:  
 
 - **Initial Setup**: 1 hours  
