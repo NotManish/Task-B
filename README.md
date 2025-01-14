@@ -47,8 +47,7 @@ npm run dev
 - Add delete task, add board features.
 
 ####  **Live Demo Link**  
-- task-b-git-main-manishh-shresthas-projects.vercel.app
-
+- https://task-b-git-main-manishh-shresthas-projects.vercel.app/
 ####  **Time Spent on the Project**  
 Include a breakdown of the time spent, e.g.:  
 
