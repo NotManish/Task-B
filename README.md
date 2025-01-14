@@ -53,9 +53,9 @@ npm run dev
 Include a breakdown of the time spent, e.g.:  
 
 - **Initial Setup**: 1 hours  
-- **Implementing Drag-and-Drop**: 4 hours  
+- **Implementing Drag-and-Drop**: 5 hours  
 - **Styling with Tailwind CSS**: 3 hours  
 - **Testing and Debugging**: 1 hour 
 - **README and Documentation**: 1 hour  
 
-_Total Time: 10 hours_  
+_Total Time: 11 hours_aproximated
