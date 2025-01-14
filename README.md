@@ -5,7 +5,6 @@ A simple and interactive Kanban board application with drag-and-drop functionali
 - Drag and Drop: Move tasks across different boards using drag-and-drop functionality powered by react-beautiful-dnd.
 - Add Tasks: Create tasks with a title and description.
 -  Dynamic Boards: Boards like "To Do," "In Progress," and "Completed" are pre-configured and saved in local storage.
-- Persistence: Tasks and boards are stored in the browser's local storage for data retention across sessions.
 - Keyboard Accessibility: Supports keyboard interaction for adding and canceling tasks.
 
 # Technologies Used
