@@ -2,6 +2,7 @@ import { myContext } from "../App";
 import { useContext } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import Board from "./Board";
+import AddBoard from "./AddBoard";
 
 function BoardContainer() {
   const { boards, setBoard } = useContext(myContext);
@@ -34,10 +35,13 @@ function BoardContainer() {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <div className="flex flex-row gap-1 overflow-x-scroll no-scrollbar h-full p-2 md:gap-2">
+
+     <div className="flex flex-row gap-1 overflow-x-scroll no-scrollbar h-full md:gap-2 p-2">
         {boards.map((item) => (
           <Board key={item.id} item={item} />
         ))}
+              <AddBoard/>
+
       </div>
     </DragDropContext>
   );
